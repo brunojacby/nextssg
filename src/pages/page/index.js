@@ -1,11 +1,12 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 
-export default function Home() {
+export default function RedirectToFirstPage() {
   const router = useRouter();
+
   useEffect(() => {
-    router.replace("/page/1"); // Redireciona para /page/1
+    router.replace("/page/1");
   }, [router]);
 
-  return <div>Loading...</div>;
+  return null;
 }
