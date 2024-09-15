@@ -5,7 +5,7 @@ import Head from 'next/head'
 import AnimatedText from '@/components/AnimatedText'
 import Layout from '@/components/Layout'
 
-const contact = () => {
+const contact = ({message}) => {
   return (
     <>
     <Head>
@@ -21,6 +21,16 @@ const contact = () => {
     </main>
   </>
   )
+}
+
+export async function getStaticProps() {
+  const message = "Bem-vindo ao meu site!";
+
+  return {
+    props: {
+      message,
+    },
+  };
 }
 
 export default contact

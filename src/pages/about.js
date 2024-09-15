@@ -34,7 +34,7 @@ const AnimatedNumbers = ({ value }) => {
   return <span ref={ref}></span>;
 };
 
-const about = () => {
+const about = ({message}) => {
   return (
     <>
       <Head>
@@ -129,5 +129,15 @@ const about = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const message = "Bem-vindo ao meu site!";
+
+  return {
+    props: {
+      message,
+    },
+  };
+}
 
 export default about;

@@ -9,7 +9,7 @@ import HireMe from "@/components/HireMe";
 import lightBulb from "../../public/images/lamp.svg";
 import TransitionEffect from "@/components/TransitionEffect";
 
-export default function Home() {
+export default function Home({message}) {
   return (
     <>
       <Head>
@@ -70,4 +70,14 @@ export default function Home() {
       </main>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const message = "Bem-vindo ao meu site!";
+
+  return {
+    props: {
+      message,
+    },
+  };
 }
